@@ -1,0 +1,2 @@
+../Drivers/Logger/log.c:18:13:MX_USART2_UART_Init	1
+../Drivers/Logger/log.c:34:6:set_log_level	7

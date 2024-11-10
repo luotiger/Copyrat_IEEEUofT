@@ -1,0 +1,14 @@
+../Drivers/Mpu6500/mpu6500.c:12:13:MPU6500_OnActivate	1
+../Drivers/Mpu6500/mpu6500.c:16:20:MPU6500_Activate	1
+../Drivers/Mpu6500/mpu6500.c:22:20:MPU6500_Deactivate	1
+../Drivers/Mpu6500/mpu6500.c:27:9:SPIx_WriteRead	2
+../Drivers/Mpu6500/mpu6500.c:40:6:MPU_SPI_Write	2
+../Drivers/Mpu6500/mpu6500.c:53:6:MPU_SPI_Read	1
+../Drivers/Mpu6500/mpu6500.c:63:6:mpu6500_write_register	1
+../Drivers/Mpu6500/mpu6500.c:70:6:mpu6500_read_registers	1
+../Drivers/Mpu6500/mpu6500.c:76:16:whoAmI	1
+../Drivers/Mpu6500/mpu6500.c:87:19:mpu6500_init	3
+../Drivers/Mpu6500/mpu6500.c:166:6:mpu6500_set_accel_range	1
+../Drivers/Mpu6500/mpu6500.c:172:6:mpu6500_get_gyro_range	1
+../Drivers/Mpu6500/mpu6500.c:178:6:mpu6500_set_dlpf_bandwidth	1
+../Drivers/Mpu6500/mpu6500.c:184:6:mpu6500_get_data	1
