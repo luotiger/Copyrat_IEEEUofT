@@ -29,6 +29,9 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "mpu6500.h"
+#include "pwm.h"
+#include "log.h"
 
 /* USER CODE END Includes */
 
@@ -69,6 +72,8 @@ void MX_FREERTOS_Init(void);
   * @brief  The application entry point.
   * @retval int
   */
+
+
 int main(void)
 {
 
@@ -107,6 +112,7 @@ int main(void)
   MX_TIM13_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
+  mpu6500_init();
 
   /* USER CODE END 2 */
 
@@ -120,11 +126,14 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  int16_t AccData[3] = {0,0,0} ;
+  int16_t GyroData[3] = {0,0,0};
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
+	mpu6500_get_data(AccData, GyroData);
   }
   /* USER CODE END 3 */
 }

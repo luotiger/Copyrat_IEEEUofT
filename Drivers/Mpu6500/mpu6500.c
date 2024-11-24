@@ -54,8 +54,8 @@ void MPU_SPI_Read(uint8_t *pBuffer, uint8_t ReadAddr, uint16_t NumByteToRead)
 {
     MPU6500_Activate();
     uint8_t data = ReadAddr | READWRITE_CMD;
-    HAL_SPI_Transmit(&MPU6500_SPI, &data, 1, HAL_MAX_DELAY);
-    HAL_SPI_Receive(&MPU6500_SPI, pBuffer, NumByteToRead, HAL_MAX_DELAY);
+    HAL_SPI_Transmit(&hspi1, &data, 1, HAL_MAX_DELAY);
+    HAL_SPI_Receive(&hspi1, pBuffer, NumByteToRead, HAL_MAX_DELAY);
     MPU6500_Deactivate();
 }
 
@@ -89,7 +89,7 @@ HAL_StatusTypeDef mpu6500_init() //Careful with this, don't use it since Im p su
     /* Initialising the GPIO of Chip select */
     GPIO_InitTypeDef GPIO_InitStruct = {0};
 
-    HAL_GPIO_WritePin(MPU6500_CS_GPIO, MPU6500_CS_PIN, GPIO_PIN_RESET);
+    /*HAL_GPIO_WritePin(MPU6500_CS_GPIO, MPU6500_CS_PIN, GPIO_PIN_RESET);
     GPIO_InitStruct.Pin = MPU6500_CS_PIN;
     GPIO_InitStruct.Mode = GPIO_MODE_OUTPUT_PP;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
@@ -97,6 +97,7 @@ HAL_StatusTypeDef mpu6500_init() //Careful with this, don't use it since Im p su
     HAL_GPIO_Init(MPU6500_CS_GPIO, &GPIO_InitStruct);
 
     /* Initialising the SPI Instance */
+    /*
     hspi1.Instance = SPI1;
     hspi1.Init.Mode = SPI_MODE_MASTER;
     hspi1.Init.Direction = SPI_DIRECTION_2LINES;
@@ -104,16 +105,17 @@ HAL_StatusTypeDef mpu6500_init() //Careful with this, don't use it since Im p su
     hspi1.Init.CLKPolarity = SPI_POLARITY_HIGH;
     hspi1.Init.CLKPhase = SPI_PHASE_2EDGE;
     hspi1.Init.NSS = SPI_NSS_SOFT;
-    hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_32;
+    hspi1.Init.BaudRatePrescaler = SPI_BAUDRATEPRESCALER_32; //BAUDRATEPRESCALER_2
     hspi1.Init.FirstBit = SPI_FIRSTBIT_MSB;
     hspi1.Init.TIMode = SPI_TIMODE_DISABLE;
     hspi1.Init.CRCCalculation = SPI_CRCCALCULATION_DISABLE;
     hspi1.Init.CRCPolynomial = 10;
     HAL_StatusTypeDef err = HAL_SPI_Init(&hspi1);
     HAL_ERROR_CHECK(err == HAL_OK, "Failed to initialise the SPI Driver", err);
+    */
 
     // select clock source to gyro
-    mpu6500_write_register(PWR_MGMNT_1, CLOCK_SEL_PLL);
+    mpu6500_write_register(PWR_MGMNT_1, 0x1);
     // enable I2C master mode
     mpu6500_write_register(USER_CTRL, I2C_MST_EN);
     // set the I2C bus speed to 400 kHz
@@ -128,8 +130,9 @@ HAL_StatusTypeDef mpu6500_init() //Careful with this, don't use it since Im p su
     mpu6500_write_register(PWR_MGMNT_1, CLOCK_SEL_PLL);
 
     // check the WHO AM I byte, expected value is 0x71 (decimal 113) or 0x73 (decimal 115)
-    uint8_t who = whoAmI();
-    HAL_ERROR_CHECK(who == 0x75, "Unable to verify the address of whoami register", HAL_ERROR);
+    uint8_t who = 0;
+    who = whoAmI();
+    HAL_ERROR_CHECK(who == 0x70, "Unable to verify the address of whoami register", HAL_ERROR);
 
     // enable accelerometer and gyro
     mpu6500_write_register(PWR_MGMNT_2, SEN_ENABLE);

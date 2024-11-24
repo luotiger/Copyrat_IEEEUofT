@@ -7,8 +7,8 @@
 ../Drivers/Mpu6500/mpu6500.c:63:6:mpu6500_write_register	1
 ../Drivers/Mpu6500/mpu6500.c:70:6:mpu6500_read_registers	1
 ../Drivers/Mpu6500/mpu6500.c:76:16:whoAmI	1
-../Drivers/Mpu6500/mpu6500.c:87:19:mpu6500_init	3
-../Drivers/Mpu6500/mpu6500.c:166:6:mpu6500_set_accel_range	1
-../Drivers/Mpu6500/mpu6500.c:172:6:mpu6500_get_gyro_range	1
-../Drivers/Mpu6500/mpu6500.c:178:6:mpu6500_set_dlpf_bandwidth	1
-../Drivers/Mpu6500/mpu6500.c:184:6:mpu6500_get_data	1
+../Drivers/Mpu6500/mpu6500.c:87:19:mpu6500_init	2
+../Drivers/Mpu6500/mpu6500.c:169:6:mpu6500_set_accel_range	1
+../Drivers/Mpu6500/mpu6500.c:175:6:mpu6500_get_gyro_range	1
+../Drivers/Mpu6500/mpu6500.c:181:6:mpu6500_set_dlpf_bandwidth	1
+../Drivers/Mpu6500/mpu6500.c:187:6:mpu6500_get_data	1

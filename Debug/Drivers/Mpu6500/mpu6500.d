@@ -34,7 +34,7 @@ Drivers/Mpu6500/mpu6500.o: ../Drivers/Mpu6500/mpu6500.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- ../Drivers/Logger/log.h
+ C:/Users/aahan/STM32CubeIDE/workspace_1.16.1/Copyrat_IEEE/Drivers/Logger/log.h
 ../Drivers/Mpu6500/mpu6500.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -70,4 +70,4 @@ Drivers/Mpu6500/mpu6500.o: ../Drivers/Mpu6500/mpu6500.c \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-../Drivers/Logger/log.h:
+C:/Users/aahan/STM32CubeIDE/workspace_1.16.1/Copyrat_IEEE/Drivers/Logger/log.h:

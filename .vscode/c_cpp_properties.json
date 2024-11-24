@@ -1,0 +1,18 @@
+{
+  "configurations": [
+    {
+      "name": "windows-clang-x64",
+      "includePath": [
+        "${workspaceFolder}/**"
+      ],
+      "compilerPath": "C:\\Users\\aahan\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\MSYS2",
+      "cStandard": "${default}",
+      "cppStandard": "${default}",
+      "intelliSenseMode": "windows-clang-x64",
+      "compilerArgs": [
+        ""
+      ]
+    }
+  ],
+  "version": 4
+}

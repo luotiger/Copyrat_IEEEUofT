@@ -34,7 +34,7 @@ Drivers/Drv8833/drv8833.o: ../Drivers/Drv8833/drv8833.c \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h \
  ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h \
- ../Drivers/Pwm/pwm.h
+ C:/Users/aahan/STM32CubeIDE/workspace_1.16.1/Copyrat_IEEE/Drivers/Pwm/pwm.h
 ../Drivers/Drv8833/drv8833.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f4xx.h:
 ../Drivers/CMSIS/Device/ST/STM32F4xx/Include/stm32f405xx.h:
@@ -70,4 +70,4 @@ Drivers/Drv8833/drv8833.o: ../Drivers/Drv8833/drv8833.c \
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_tim_ex.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal_uart.h:
-../Drivers/Pwm/pwm.h:
+C:/Users/aahan/STM32CubeIDE/workspace_1.16.1/Copyrat_IEEE/Drivers/Pwm/pwm.h:

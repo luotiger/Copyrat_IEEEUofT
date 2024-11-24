@@ -43,34 +43,34 @@ $(wildcard ../makefile.init) \
 $(wildcard ../makefile.targets) \
 
 
-BUILD_ARTIFACT_NAME := Copyrat_F405RG
+BUILD_ARTIFACT_NAME := Copyrat_IEEE
 BUILD_ARTIFACT_EXTENSION := elf
 BUILD_ARTIFACT_PREFIX :=
 BUILD_ARTIFACT := $(BUILD_ARTIFACT_PREFIX)$(BUILD_ARTIFACT_NAME)$(if $(BUILD_ARTIFACT_EXTENSION),.$(BUILD_ARTIFACT_EXTENSION),)
 
 # Add inputs and outputs from these tool invocations to the build variables 
 EXECUTABLES += \
-Copyrat_F405RG.elf \
+Copyrat_IEEE.elf \
 
 MAP_FILES += \
-Copyrat_F405RG.map \
+Copyrat_IEEE.map \
 
 SIZE_OUTPUT += \
 default.size.stdout \
 
 OBJDUMP_LIST += \
-Copyrat_F405RG.list \
+Copyrat_IEEE.list \
 
 
 # All Target
 all: main-build
 
 # Main-build Target
-main-build: Copyrat_F405RG.elf secondary-outputs
+main-build: Copyrat_IEEE.elf secondary-outputs
 
 # Tool invocations
-Copyrat_F405RG.elf Copyrat_F405RG.map: $(OBJS) $(USER_OBJS) C:\Users\tiger\STM32CubeIDE\workspace_1.16.1\Copyrat_F405RG\STM32F405RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "Copyrat_F405RG.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\tiger\STM32CubeIDE\workspace_1.16.1\Copyrat_F405RG\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Copyrat_F405RG.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Copyrat_IEEE.elf Copyrat_IEEE.map: $(OBJS) $(USER_OBJS) C:\Users\aahan\STM32CubeIDE\workspace_1.16.1\Copyrat_IEEE\STM32F405RGTX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "Copyrat_IEEE.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"C:\Users\aahan\STM32CubeIDE\workspace_1.16.1\Copyrat_IEEE\STM32F405RGTX_FLASH.ld" --specs=nosys.specs -Wl,-Map="Copyrat_IEEE.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
@@ -79,14 +79,14 @@ default.size.stdout: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
 	@echo 'Finished building: $@'
 	@echo ' '
 
-Copyrat_F405RG.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Copyrat_F405RG.list"
+Copyrat_IEEE.list: $(EXECUTABLES) makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-objdump -h -S $(EXECUTABLES) > "Copyrat_IEEE.list"
 	@echo 'Finished building: $@'
 	@echo ' '
 
 # Other Targets
 clean:
-	-$(RM) Copyrat_F405RG.elf Copyrat_F405RG.list Copyrat_F405RG.map default.size.stdout
+	-$(RM) Copyrat_IEEE.elf Copyrat_IEEE.list Copyrat_IEEE.map default.size.stdout
 	-@echo ' '
 
 secondary-outputs: $(SIZE_OUTPUT) $(OBJDUMP_LIST)
