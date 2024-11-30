@@ -136,6 +136,9 @@ void mpu6500_set_dlpf_bandwidth(DLPFBandwidth bandwidth);
 void mpu6500_get_gyro_range(GyroRange range);
 /* sets the accelerometer full scale range to values other than default */
 void mpu6500_set_accel_range(AccelRange range);
+
+void mpu6500_get_gyro(int16_t *GyroData);
+
 #ifdef __cplusplus
 }
 #endif

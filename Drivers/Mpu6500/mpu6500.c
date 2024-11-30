@@ -197,3 +197,10 @@ void mpu6500_get_data(int16_t *AccData, int16_t *GyroData)
     GyroData[1] = (((int16_t)_buffer[10]) << 8) | _buffer[11];
     GyroData[2] = (((int16_t)_buffer[12]) << 8) | _buffer[13];
 }
+void mpu6500_get_gyro(int16_t *GyroData) {
+  // grab the data from the MPU6500
+  mpu6500_read_registers(ACCEL_OUT, 14, _buffer);
+  GyroData[0] = (((int16_t)_buffer[8]) << 8) | _buffer[9];
+  GyroData[1] = (((int16_t)_buffer[10]) << 8) | _buffer[11];
+  GyroData[2] = (((int16_t)_buffer[12]) << 8) | _buffer[13];
+}

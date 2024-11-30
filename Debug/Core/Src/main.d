@@ -55,7 +55,8 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Inc/gpio.h \
  C:/Users/aahan/STM32CubeIDE/workspace_1.16.1/Copyrat_IEEE/Drivers/Mpu6500/mpu6500.h \
  C:/Users/aahan/STM32CubeIDE/workspace_1.16.1/Copyrat_IEEE/Drivers/Pwm/pwm.h \
- C:/Users/aahan/STM32CubeIDE/workspace_1.16.1/Copyrat_IEEE/Drivers/Logger/log.h
+ C:/Users/aahan/STM32CubeIDE/workspace_1.16.1/Copyrat_IEEE/Drivers/Logger/log.h \
+ C:/Users/aahan/STM32CubeIDE/workspace_1.16.1/Copyrat_IEEE/Drivers/Drv8833/drv8833.h
 ../Core/Inc/main.h:
 ../Drivers/STM32F4xx_HAL_Driver/Inc/stm32f4xx_hal.h:
 ../Core/Inc/stm32f4xx_hal_conf.h:
@@ -119,3 +120,4 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 C:/Users/aahan/STM32CubeIDE/workspace_1.16.1/Copyrat_IEEE/Drivers/Mpu6500/mpu6500.h:
 C:/Users/aahan/STM32CubeIDE/workspace_1.16.1/Copyrat_IEEE/Drivers/Pwm/pwm.h:
 C:/Users/aahan/STM32CubeIDE/workspace_1.16.1/Copyrat_IEEE/Drivers/Logger/log.h:
+C:/Users/aahan/STM32CubeIDE/workspace_1.16.1/Copyrat_IEEE/Drivers/Drv8833/drv8833.h:
