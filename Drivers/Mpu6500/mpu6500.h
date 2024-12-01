@@ -139,6 +139,8 @@ void mpu6500_set_accel_range(AccelRange range);
 
 void mpu6500_get_gyro(int16_t *GyroData);
 
+void mpu6500_get_acc(int16_t *AccData);
+/*tests the gyrometer*/
 #ifdef __cplusplus
 }
 #endif

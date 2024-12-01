@@ -204,3 +204,14 @@ void mpu6500_get_gyro(int16_t *GyroData) {
   GyroData[1] = (((int16_t)_buffer[10]) << 8) | _buffer[11];
   GyroData[2] = (((int16_t)_buffer[12]) << 8) | _buffer[13];
 }
+
+void mpu6500_get_acc(int16_t *AccData) {
+  // grab the data from the MPU6500
+  mpu6500_read_registers(ACCEL_OUT, 14, _buffer);
+  AccData[0] = (((int16_t)_buffer[0]) << 8) | _buffer[1];
+  AccData[1] = (((int16_t)_buffer[2]) << 8) | _buffer[3];
+  AccData[2] = (((int16_t)_buffer[4]) << 8) | _buffer[5];
+  // we should be dividing by the range sensitivty to get a value between the +-
+  // number of Gs
+}
+

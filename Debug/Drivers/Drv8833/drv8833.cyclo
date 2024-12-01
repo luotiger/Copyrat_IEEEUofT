@@ -1,3 +1,12 @@
-../Drivers/Drv8833/drv8833.c:7:19:drv8833_init	1
-../Drivers/Drv8833/drv8833.c:20:6:set_duty_cycle	11
-../Drivers/Drv8833/drv8833.c:65:6:stop_motors	1
+../Drivers/Drv8833/drv8833.c:10:19:drv8833_init	1
+../Drivers/Drv8833/drv8833.c:23:6:set_duty_cycle	11
+../Drivers/Drv8833/drv8833.c:68:6:stop_motors	1
+../Drivers/Drv8833/drv8833.c:73:6:move_forward	1
+../Drivers/Drv8833/drv8833.c:78:6:accelerate_forward	2
+../Drivers/Drv8833/drv8833.c:85:6:move_backward	1
+../Drivers/Drv8833/drv8833.c:90:6:turn_left	1
+../Drivers/Drv8833/drv8833.c:95:6:turn_right	1
+../Drivers/Drv8833/drv8833.c:101:6:rotate_left	1
+../Drivers/Drv8833/drv8833.c:106:6:rotate_right	1
+../Drivers/Drv8833/drv8833.c:111:6:stop_micromouse	1
+../Drivers/Drv8833/drv8833.c:116:6:decelerate_stop	2

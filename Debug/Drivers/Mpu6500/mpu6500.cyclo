@@ -13,3 +13,4 @@
 ../Drivers/Mpu6500/mpu6500.c:181:6:mpu6500_set_dlpf_bandwidth	1
 ../Drivers/Mpu6500/mpu6500.c:187:6:mpu6500_get_data	1
 ../Drivers/Mpu6500/mpu6500.c:200:6:mpu6500_get_gyro	1
+../Drivers/Mpu6500/mpu6500.c:208:6:mpu6500_get_acc	1

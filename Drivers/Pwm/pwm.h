@@ -6,6 +6,7 @@ extern "C" {
 #endif
 
 #include "stm32f4xx.h"
+#include "tim.h"
 
 extern TIM_HandleTypeDef htim10;
 

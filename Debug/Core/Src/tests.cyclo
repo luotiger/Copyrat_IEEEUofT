@@ -1,0 +1,7 @@
+../Core/Src/tests.c:3:6:testAccWithCircle	10
+../Core/Src/tests.c:33:6:testGyroWithCircle	10
+../Core/Src/tests.c:63:6:timedMoveInDir	3
+../Core/Src/tests.c:81:6:MoveForwardsForNumSeconds	1
+../Core/Src/tests.c:84:6:MoveBackwardsForNumSeconds	1
+../Core/Src/tests.c:88:6:figureEightWithAcc	9
+../Core/Src/tests.c:114:6:figureEightWithGyro	9

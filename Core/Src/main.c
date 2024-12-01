@@ -106,14 +106,15 @@ int main(void)
   MX_I2C2_Init();
   MX_I2C3_Init();
   MX_SPI1_Init();
-  MX_TIM3_Init();
-  MX_TIM10_Init();
-  MX_TIM11_Init();
-  MX_TIM12_Init();
-  MX_TIM13_Init();
+//  MX_TIM3_Init();
+//  MX_TIM10_Init();
+//  MX_TIM11_Init();
+//  MX_TIM12_Init();
+//  MX_TIM13_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
   mpu6500_init();
+  drv8833_init();
 
   /* USER CODE END 2 */
 
@@ -129,57 +130,51 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   int16_t AccData[3] = {0,0,0} ;
   int16_t GyroData[3] = {0,0,0};
-  void rotate_left(uint8_t speed){
-      set_duty_cycle(MOTOR_L, BACKWARD, speed);
-      set_duty_cycle(MOTOR_R, FORWARD, speed);
-  }
 
-  void rotate_right(uint8_t speed) {
-      set_duty_cycle(MOTOR_L, FORWARD, speed);  // Left wheel moves forward
-      set_duty_cycle(MOTOR_R, BACKWARD, speed); // Right wheel moves backward
-  }
 
-  void stop_micromouse() {
-      set_duty_cycle(MOTOR_L, STOP, 0);
-      set_duty_cycle(MOTOR_R, STOP, 0);
-  }
-  void testGyroWithCircle(uint8_t speed_input) {
-    uint8_t speed = speed_input;
-    int16_t dx = 20;  // this variable needs to be determined based on the range
-                      // of the gyroscope
-    mpu6500_get_gyro(GyroData);
-    int16_t xdir_init = GyroData[0];
-    int16_t ydir_init = GyroData[1];
-    int counter = 0;
-    while (counter < 100) {
-      rotate_right(speed);
-      while (1) {
-        mpu6500_get_gyro(GyroData);
-        if ((xdir_init - dx <= GyroData[0]&&GyroData[0] <= xdir_init + dx) &&
-            (ydir_init - dx <= GyroData[1]&&GyroData[1] <= ydir_init + dx)) {
-          break;
-        }
-      }
-      rotate_left(speed);
-      while (1) {
-        mpu6500_get_gyro(GyroData);
-        if ((xdir_init - dx <= GyroData[0]&&GyroData[0] <= xdir_init + dx) &&
-            (ydir_init - dx <= GyroData[1]&&GyroData[1] <= ydir_init + dx)) {
-          break;
-        }
-      }
-      counter = counter + 1;
-    }
-    stop_micromouse();
-  }
 
+//  void testGyroWithCircle(uint8_t speed_input) {
+//    uint8_t speed = speed_input;
+//    int16_t dx = 20;  // this variable needs to be determined based on the range
+//                      // of the gyroscope
+//    mpu6500_get_gyro(GyroData);
+//    int16_t xdir_init = GyroData[0];
+//    int16_t ydir_init = GyroData[1];
+//    int counter = 0;
+//    while (counter < 100) {
+//      rotate_right(speed);
+//      while (1) {
+//        mpu6500_get_gyro(GyroData);
+//        if ((xdir_init - dx <= GyroData[0]&&GyroData[0] <= xdir_init + dx) &&
+//            (ydir_init - dx <= GyroData[1]&&GyroData[1] <= ydir_init + dx)) {
+//          break;
+//        }
+//      }
+//      rotate_left(speed);
+//      while (1) {
+//        mpu6500_get_gyro(GyroData);
+//        if ((xdir_init - dx <= GyroData[0]&&GyroData[0] <= xdir_init + dx) &&
+//            (ydir_init - dx <= GyroData[1]&&GyroData[1] <= ydir_init + dx)) {
+//          break;
+//        }
+//      }
+//      counter = counter + 1;
+//    }
+//    stop_micromouse();
+//  }
+  move_forward(50);
+
+  HAL_Delay(3000);
+  move_backward(50);
+  HAL_Delay(3000);
+  stop_motors();
   while (1)
   {
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
 	mpu6500_get_data(AccData, GyroData);
-	testGyroWithCircle(100);
+	//testGyroWithCircle(100);
   }
   /* USER CODE END 3 */
 }
